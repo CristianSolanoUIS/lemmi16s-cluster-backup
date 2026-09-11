@@ -1,0 +1,48 @@
++ set -e
++ sample_folder=alfa_v1v2_SILVA-e002
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-e002
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/qiime2_alfa_v1v2_SILVA/tmp_e002
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2_20228_lemmi16s.alfa_v1v2_SILVA-e002.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters[type]='SampleData[PairedEndSequencesWithQuality]'
++ parameters[format]=PairedEndFastqManifestPhred33
++ parameters[trim_length]=120
++ parameters["tax_level"]=7
++ parameters["q_score"]=20
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_alfa_v1v2_SILVA-e002
++ cd tmp_alfa_v1v2_SILVA-e002
++ '[' -z ']'
+++ nproc
++ cpus=4
++ echo '=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 4 NUCLEOS ==='
++ echo sample-id,absolute-filepath,direction
++ echo -e alfa-v1v2-SILVA-e002,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-e002/queryReads1.fq,forward
++ echo -e alfa-v1v2-SILVA-e002,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-e002/queryReads2.fq,reverse
++ echo '[PASO 1/5] Importando secuencias demux...'
++ qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path manifest.tsv --output-path demux.qza --input-format PairedEndFastqManifestPhred33
++ echo '[PASO 2/5] Filtrado de calidad por q-score...'
++ qiime quality-filter q-score --i-demux demux.qza --p-min-quality 20 --o-filtered-sequences demux-filtered.qza --o-filter-stats demux-filter-stats.qza
++ echo '[PASO 3/5] Denoising y filtrado con Deblur (usando 4 hilos)...'
++ qiime deblur denoise-16S --i-demultiplexed-seqs demux-filtered.qza --p-trim-length 120 --p-jobs-to-start 4 --o-representative-sequences rep-seqs-deblur.qza --o-table table-deblur.qza --p-sample-stats --o-stats deblur-stats.qza
++ mv rep-seqs-deblur.qza rep-seqs.qza
++ mv table-deblur.qza table.qza
++ echo '[PASO 4/5] Clasificacion taxonomica Naive Bayes con classify-sklearn (usando 4 hilos)...'
++ qiime feature-classifier classify-sklearn --i-classifier /shared/users/grupo1/lemmi16s/benchmark/tmp/qiime2_alfa_v1v2_SILVA/tmp_e002/referenceClassificator.qza --i-reads rep-seqs.qza --p-n-jobs 4 --o-classification taxonomy.qza
++ echo '[PASO 5/5] Colapso taxonomico y exportacion de resultados...'
++ qiime taxa collapse --i-table table.qza --i-taxonomy taxonomy.qza --p-level 7 --o-collapsed-table phyla-table.qza
++ qiime tools export --input-path phyla-table.qza --output-path .
++ biom convert -i feature-table.biom -o results.txt --to-tsv
++ editResult.py results.txt results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2_20228_lemmi16s.alfa_v1v2_SILVA-e002.predictions.tsv
++ echo '=== ANALISIS QIIME2 COMPLETADO CON EXITO ==='

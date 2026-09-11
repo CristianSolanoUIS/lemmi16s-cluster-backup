@@ -1,0 +1,32 @@
+==========================================================
+=== INICIO DE TRABAJO SLURM: 821 (e001) ===
+==========================================================
+Nodo asignado:   rbp5-5
+CPUs asignados:  4
+Muestra:         e001
+Fecha y hora:    Wed Sep  9 15:03:20 -05 2026
+Directorio base: /shared/users/grupo1/lemmi16s
+==========================================================
+[TELEMETRIA] Iniciando medicion de energia RPi5 en rbp5-5...
+[TELEMETRIA] Proceso de medicion corriendo con PID 53755
+[PIPELINE] Iniciando ejecucion de QIIME 2 para alfa_v1v2_SILVA-e001...
+=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 4 NUCLEOS ===
+[PASO 1/5] Importando secuencias demux...
+Imported manifest.tsv as PairedEndFastqManifestPhred33 to demux.qza
+[PASO 2/5] Filtrado de calidad por q-score...
+Saved SampleData[SequencesWithQuality] to: demux-filtered.qza
+Saved QualityFilterStats to: demux-filter-stats.qza
+[PASO 3/5] Denoising y filtrado con Deblur (usando 4 hilos)...
+Saved FeatureTable[Frequency] to: table-deblur.qza
+Saved FeatureData[Sequence] to: rep-seqs-deblur.qza
+Saved DeblurStats to: deblur-stats.qza
+[PASO 4/5] Clasificacion taxonomica Naive Bayes con classify-sklearn (usando 4 hilos)...
+[TELEMETRIA] Deteniendo proceso de medicion (53755)...
+==========================================================
+=== RESUMEN DE FINALIZACION (e001) ===
+==========================================================
+Fecha y hora fin: Wed Sep  9 15:30:33 -05 2026
+Duracion total:   1632 segundos (27 min 12 s)
+Codigo de salida: 1
+[RESULTADO] ERROR: No se genero /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2_20228_lemmi16s.alfa_v1v2_SILVA-e001.predictions.tsv
+==========================================================

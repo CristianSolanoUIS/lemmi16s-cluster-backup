@@ -1,0 +1,10 @@
+services:
+  - docker:dind
+build and run:
+  image: quay.io/ezlab/lemmici
+  script:
+     - dockerd --iptables=true &
+     - sleep 5
+     - tests/test.sh
+
+

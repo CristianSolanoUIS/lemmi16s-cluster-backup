@@ -1,0 +1,22 @@
+==========================================
+LEMMI16s Job started on Slurm cluster
+Job ID: 682
+Node: rbp5-1
+Date: Tue Sep  8 15:22:41 -05 2026
+User: grupo1
+==========================================
+Running lemmi16s_analysis with 4 cores...
+Running analyses...
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/runs/kraken2_16s_HOMD_v4_GTDB.yaml
+none=none
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/runs/lotus303_16s_HM_Contaminated.yaml
+none=none
+Running evaluations...
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/instances/HM_Contaminated_Soil.yaml
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/instances/HOMD_v4_GTDB.yaml
+updating structure.json...
+LEMMI16s DONE
+==========================================
+LEMMI16s Job finished successfully!
+Date: Tue Sep  8 15:25:34 -05 2026
+==========================================

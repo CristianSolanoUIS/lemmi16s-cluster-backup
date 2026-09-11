@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1D4F05A8-7B62-4EB6-B0DC-0CFE76E0224A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>usearch12</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>usearch12</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CLARET=1</PreprocessorDefinitions>
+      <OpenMPSupport>true</OpenMPSupport>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);psapi.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CLARET=1;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <OpenMPSupport>true</OpenMPSupport>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);psapi.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CLARET=1</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <OpenMPSupport>true</OpenMPSupport>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);psapi.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CLARET=1;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <OpenMPSupport>true</OpenMPSupport>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);psapi.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="adler32.c" />
+    <ClCompile Include="accepter.cpp" />
+    <ClCompile Include="alignresult.cpp" />
+    <ClCompile Include="alnheuristics.cpp" />
+    <ClCompile Include="alnout.cpp" />
+    <ClCompile Include="alnparams.cpp" />
+    <ClCompile Include="alpha.cpp" />
+    <ClCompile Include="alpha2.cpp" />
+    <ClCompile Include="alphainfo.cpp" />
+    <ClCompile Include="arscorer.cpp" />
+    <ClCompile Include="bimeradp.cpp" />
+    <ClCompile Include="bitmapsearcher.cpp" />
+    <ClCompile Include="bitvec.cpp" />
+    <ClCompile Include="bitvec64.cpp" />
+    <ClCompile Include="blast6out.cpp" />
+    <ClCompile Include="blosum62.cpp" />
+    <ClCompile Include="chainer1.cpp" />
+    <ClCompile Include="chainer.cpp" />
+    <ClCompile Include="chimehit.cpp" />
+    <ClCompile Include="chunksearcher.cpp" />
+    <ClCompile Include="closedrefsink.cpp" />
+    <ClCompile Include="clusterfast.cpp" />
+    <ClCompile Include="clustermt.cpp" />
+    <ClCompile Include="clustersink.cpp" />
+    <ClCompile Include="clustersmallmem.cpp" />
+    <ClCompile Include="cmd.cpp" />
+    <ClCompile Include="comppath.cpp" />
+    <ClCompile Include="constaxf.cpp" />
+    <ClCompile Include="constaxsink.cpp" />
+    <ClCompile Include="constaxstr.cpp" />
+    <ClCompile Include="countsort.cpp" />
+    <ClCompile Include="crc32.c" />
+    <ClCompile Include="dbhitsink.cpp" />
+    <ClCompile Include="deflate.c" />
+    <ClCompile Include="deparser.cpp" />
+    <ClCompile Include="derepfull.cpp" />
+    <ClCompile Include="derepresult.cpp" />
+    <ClCompile Include="diagbox.cpp" />
+    <ClCompile Include="dustmask.cpp" />
+    <ClCompile Include="estats.cpp" />
+    <ClCompile Include="evalue.cpp" />
+    <ClCompile Include="fastaseqsource.cpp" />
+    <ClCompile Include="fastqfilter2.cpp" />
+    <ClCompile Include="fastxgetsamplenames.cpp" />
+    <ClCompile Include="fastmask.cpp" />
+    <ClCompile Include="fastq.cpp" />
+    <ClCompile Include="fastqfilter.cpp" />
+    <ClCompile Include="fastqjoin.cpp" />
+    <ClCompile Include="fastqmerge.cpp" />
+    <ClCompile Include="fastqseqsource.cpp" />
+    <ClCompile Include="fastxtruncate.cpp" />
+    <ClCompile Include="filetype.cpp" />
+    <ClCompile Include="fileseqsource.cpp" />
+    <ClCompile Include="findgene.cpp" />
+    <ClCompile Include="finger.cpp" />
+    <ClCompile Include="genefinder.cpp" />
+    <ClCompile Include="getcmd.cpp" />
+    <ClCompile Include="getfastqs.cpp" />
+    <ClCompile Include="getglobalhsps.cpp" />
+    <ClCompile Include="gethsps.cpp" />
+    <ClCompile Include="getuniquelettercount.cpp" />
+    <ClCompile Include="globalaligner.cpp" />
+    <ClCompile Include="globalalignmem.cpp" />
+    <ClCompile Include="makeclustersearcher.cpp" />
+    <ClCompile Include="mergealign.cpp" />
+    <ClCompile Include="gzipfileio.cpp" />
+    <ClCompile Include="gzlib.c" />
+    <ClCompile Include="gzread.c" />
+    <ClCompile Include="hitmgr.cpp" />
+    <ClCompile Include="hspfinder.cpp" />
+    <ClCompile Include="infback.c" />
+    <ClCompile Include="inffast.c" />
+    <ClCompile Include="inflate.c" />
+    <ClCompile Include="inftrees.c" />
+    <ClCompile Include="interp.cpp" />
+    <ClCompile Include="json.cpp" />
+    <ClCompile Include="label.cpp" />
+    <ClCompile Include="linereader.cpp" />
+    <ClCompile Include="lnfrac.cpp" />
+    <ClCompile Include="loaddb.cpp" />
+    <ClCompile Include="localaligner.cpp" />
+    <ClCompile Include="localaligner2.cpp" />
+    <ClCompile Include="localmulti.cpp" />
+    <ClCompile Include="logaln.cpp" />
+    <ClCompile Include="make3way.cpp" />
+    <ClCompile Include="makedbsearcher.cpp" />
+    <ClCompile Include="makeudb.cpp" />
+    <ClCompile Include="mask.cpp" />
+    <ClCompile Include="mergepair.cpp" />
+    <ClCompile Include="mergepost.cpp" />
+    <ClCompile Include="mergepre.cpp" />
+    <ClCompile Include="mergestats.cpp" />
+    <ClCompile Include="mergethread.cpp" />
+    <ClCompile Include="mx.cpp" />
+    <ClCompile Include="mymutex.cpp" />
+    <ClCompile Include="myutils.cpp" />
+    <ClCompile Include="objmgr.cpp" />
+    <ClCompile Include="fragaligner.cpp" />
+    <ClCompile Include="opts.cpp" />
+    <ClCompile Include="orffinder.cpp" />
+    <ClCompile Include="orient.cpp" />
+    <ClCompile Include="otutab.cpp" />
+    <ClCompile Include="otutabsink.cpp" />
+    <ClCompile Include="outputsink.cpp" />
+    <ClCompile Include="outputuc.cpp" />
+    <ClCompile Include="pathinfo.cpp" />
+    <ClCompile Include="prime.cpp" />
+    <ClCompile Include="progress.cpp" />
+    <ClCompile Include="quarts.cpp" />
+    <ClCompile Include="search.cpp" />
+    <ClCompile Include="searchcmd.cpp" />
+    <ClCompile Include="searcher.cpp" />
+    <ClCompile Include="segmaskseq.cpp" />
+    <ClCompile Include="seqdb.cpp" />
+    <ClCompile Include="seqdbfromfasta.cpp" />
+    <ClCompile Include="seqdbio.cpp" />
+    <ClCompile Include="seqdbsearcher.cpp" />
+    <ClCompile Include="seqdbseqsource.cpp" />
+    <ClCompile Include="seqhash.cpp" />
+    <ClCompile Include="seqinfo.cpp" />
+    <ClCompile Include="seqsource.cpp" />
+    <ClCompile Include="setnucmx.cpp" />
+    <ClCompile Include="sintaxsummary.cpp" />
+    <ClCompile Include="sintaxsearcher.cpp" />
+    <ClCompile Include="staralign.cpp" />
+    <ClCompile Include="strdict.cpp" />
+    <ClCompile Include="substmx.cpp" />
+    <ClCompile Include="tax.cpp" />
+    <ClCompile Include="taxy.cpp" />
+    <ClCompile Include="terminator.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="tracebackbitmem.cpp" />
+    <ClCompile Include="trees.c" />
+    <ClCompile Include="uchime3denovo.cpp" />
+    <ClCompile Include="udbbuild.cpp" />
+    <ClCompile Include="udb2bitvec.cpp" />
+    <ClCompile Include="udbusortedsearcherbig.cpp" />
+    <ClCompile Include="udbdata.cpp" />
+    <ClCompile Include="udbio.cpp" />
+    <ClCompile Include="udbparams.cpp" />
+    <ClCompile Include="udbsearcher.cpp" />
+    <ClCompile Include="udbusortedsearcher.cpp" />
+    <ClCompile Include="ungappedblast.cpp" />
+    <ClCompile Include="unoise3.cpp" />
+    <ClCompile Include="uparsesink.cpp" />
+    <ClCompile Include="uparsedp.cpp" />
+    <ClCompile Include="uparsepretty.cpp" />
+    <ClCompile Include="upclustersink.cpp" />
+    <ClCompile Include="usearch_main.cpp" />
+    <ClCompile Include="userout.cpp" />
+    <ClCompile Include="viterbifastbandmem.cpp" />
+    <ClCompile Include="viterbifastmem.cpp" />
+    <ClCompile Include="wordcounter.cpp" />
+    <ClCompile Include="wordparams.cpp" />
+    <ClCompile Include="xdropalignmem.cpp" />
+    <ClCompile Include="xdropbwdmem.cpp" />
+    <ClCompile Include="xdropbwdsplit.cpp" />
+    <ClCompile Include="xdropfwdmem.cpp" />
+    <ClCompile Include="xdropfwdsplit.cpp" />
+    <ClCompile Include="zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="accepter.h" />
+    <ClInclude Include="aligner.h" />
+    <ClInclude Include="alignresult.h" />
+    <ClInclude Include="alnheuristics.h" />
+    <ClInclude Include="alnparams.h" />
+    <ClInclude Include="alpha.h" />
+    <ClInclude Include="alphainfo.h" />
+    <ClInclude Include="bitmapsearcher.h" />
+    <ClInclude Include="bitvec.h" />
+    <ClInclude Include="bitvec64.h" />
+    <ClInclude Include="chainer.h" />
+    <ClInclude Include="chainer1.h" />
+    <ClInclude Include="chimehit.h" />
+    <ClInclude Include="chunksearcher.h" />
+    <ClInclude Include="closedrefsink.h" />
+    <ClInclude Include="clustersink.h" />
+    <ClInclude Include="cmd.h" />
+    <ClInclude Include="cmds.h" />
+    <ClInclude Include="combo.h" />
+    <ClInclude Include="constaxf.h" />
+    <ClInclude Include="constaxsink.h" />
+    <ClInclude Include="constaxstr.h" />
+    <ClInclude Include="countsort.h" />
+    <ClInclude Include="crc32.h" />
+    <ClInclude Include="dbhitsink.h" />
+    <ClInclude Include="dbtype.h" />
+    <ClInclude Include="deflate.h" />
+    <ClInclude Include="deparser.h" />
+    <ClInclude Include="derep.h" />
+    <ClInclude Include="derepresult.h" />
+    <ClInclude Include="diagbox.h" />
+    <ClInclude Include="duster.h" />
+    <ClInclude Include="estats.h" />
+    <ClInclude Include="evalue.h" />
+    <ClInclude Include="fastaseqsource.h" />
+    <ClInclude Include="fastq.h" />
+    <ClInclude Include="fastqseqsource.h" />
+    <ClInclude Include="fileseqsource.h" />
+    <ClInclude Include="filetype.h" />
+    <ClInclude Include="finger.h" />
+    <ClInclude Include="fragaligner.h" />
+    <ClInclude Include="genefinder.h" />
+    <ClInclude Include="globalaligner.h" />
+    <ClInclude Include="gobuff.h" />
+    <ClInclude Include="gzguts.h" />
+    <ClInclude Include="hitmgr.h" />
+    <ClInclude Include="hitsink.h" />
+    <ClInclude Include="hsp.h" />
+    <ClInclude Include="hspfinder.h" />
+    <ClInclude Include="inffast.h" />
+    <ClInclude Include="inffixed.h" />
+    <ClInclude Include="inflate.h" />
+    <ClInclude Include="inftrees.h" />
+    <ClInclude Include="label.h" />
+    <ClInclude Include="linereader.h" />
+    <ClInclude Include="localaligner.h" />
+    <ClInclude Include="localaligner2.h" />
+    <ClInclude Include="lockobj.h" />
+    <ClInclude Include="lockobjs.h" />
+    <ClInclude Include="mask.h" />
+    <ClInclude Include="merge.h" />
+    <ClInclude Include="mergeglobals.h" />
+    <ClInclude Include="mx.h" />
+    <ClInclude Include="mymutex.h" />
+    <ClInclude Include="myutils.h" />
+    <ClInclude Include="obj.h" />
+    <ClInclude Include="objmgr.h" />
+    <ClInclude Include="objtype.h" />
+    <ClInclude Include="objtypes.h" />
+    <ClInclude Include="opts.h" />
+    <ClInclude Include="opt_enum.h" />
+    <ClInclude Include="orffinder.h" />
+    <ClInclude Include="otutab.h" />
+    <ClInclude Include="otutabsink.h" />
+    <ClInclude Include="outputsink.h" />
+    <ClInclude Include="o_all.h" />
+    <ClInclude Include="o_flag.h" />
+    <ClInclude Include="o_flt.h" />
+    <ClInclude Include="o_str.h" />
+    <ClInclude Include="o_uns.h" />
+    <ClInclude Include="pathinfo.h" />
+    <ClInclude Include="primes.h" />
+    <ClInclude Include="progress.h" />
+    <ClInclude Include="quarts.h" />
+    <ClInclude Include="searcher.h" />
+    <ClInclude Include="segmask.h" />
+    <ClInclude Include="seqdb.h" />
+    <ClInclude Include="seqdbsearcher.h" />
+    <ClInclude Include="seqdbseqsource.h" />
+    <ClInclude Include="seqhash.h" />
+    <ClInclude Include="seqinfo.h" />
+    <ClInclude Include="seqsource.h" />
+    <ClInclude Include="sintaxsearcher.h" />
+    <ClInclude Include="sort.h" />
+    <ClInclude Include="sparsemx.h" />
+    <ClInclude Include="strdict.h" />
+    <ClInclude Include="tax.h" />
+    <ClInclude Include="taxy.h" />
+    <ClInclude Include="terminator.h" />
+    <ClInclude Include="tracebit.h" />
+    <ClInclude Include="trees.h" />
+    <ClInclude Include="udbdata.h" />
+    <ClInclude Include="udbfile.h" />
+    <ClInclude Include="udbparams.h" />
+    <ClInclude Include="udbsearcher.h" />
+    <ClInclude Include="udbusortedsearcher.h" />
+    <ClInclude Include="ufenum.h" />
+    <ClInclude Include="uparsesink.h" />
+    <ClInclude Include="upclustersink.h" />
+    <ClInclude Include="userfields.h" />
+    <ClInclude Include="wordcounter.h" />
+    <ClInclude Include="xdpmem.h" />
+    <ClInclude Include="xtype.h" />
+    <ClInclude Include="zconf.h" />
+    <ClInclude Include="zlib.h" />
+    <ClInclude Include="zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="o_defaults.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

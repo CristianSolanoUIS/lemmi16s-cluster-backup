@@ -1,0 +1,7 @@
+Database: "GTDB:release214_214.0"
+#"GTDB:release214_214.0" "SILVA:release_138.1" 
+GCN_ref: "https://rrndb.umms.med.umich.edu/static/download/rrnDB-5.8_pantaxa_stats_NCBI.tsv.zip"
+lemmi16s_master: quay.io/ezlab/lemmi16s_ci:v1.0.0_cv2
+docker_memory: 40g
+no_evaluation: []
+distribute_cores_to_n_tasks: 1

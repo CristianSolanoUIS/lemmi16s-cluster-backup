@@ -1,0 +1,38 @@
++ set -e
++ sample_folder=alfa_v1v2_SILVA-c001
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c001
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/qiime2_alfa_v1v2_SILVA/tmp_alfa_v1v2_SILVA
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/tmp/test_qiime2/test_c001.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters[type]='SampleData[PairedEndSequencesWithQuality]'
++ parameters[format]=PairedEndFastqManifestPhred33
++ parameters[trim_length]=120
++ parameters["tax_level"]=7
++ parameters["q_score"]=20
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_alfa_v1v2_SILVA-c001
++ cd tmp_alfa_v1v2_SILVA-c001
++ '[' -z ']'
+++ nproc
++ cpus=4
++ echo '=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 4 NUCLEOS ==='
++ echo sample-id,absolute-filepath,direction
++ echo -e alfa-v1v2-SILVA-c001,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c001/queryReads1.fq,forward
++ echo -e alfa-v1v2-SILVA-c001,/shared/users/grupo1/lemmi16s/benchmark/instances/alfa_v1v2_SILVA/alfa_v1v2_SILVA-c001/queryReads2.fq,reverse
++ echo '[PASO 1/5] Importando secuencias demux...'
++ qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path manifest.tsv --output-path demux.qza --input-format PairedEndFastqManifestPhred33
++ echo '[PASO 2/5] Filtrado de calidad por q-score...'
++ qiime quality-filter q-score --i-demux demux.qza --p-min-quality 20 --o-filtered-sequences demux-filtered.qza --o-filter-stats demux-filter-stats.qza
++ echo '[PASO 3/5] Denoising y filtrado con Deblur (usando 4 hilos)...'
++ qiime deblur denoise-16S --i-demultiplexed-seqs demux-filtered.qza --p-trim-length 120 --p-jobs-to-start 4 --o-representative-sequences rep-seqs-deblur.qza --o-table table-deblur.qza --p-sample-stats --o-stats deblur-stats.qza
+slurmstepd-rbp5-1: error: *** JOB 780 ON rbp5-1 CANCELLED AT 2026-09-09T13:55:51 ***

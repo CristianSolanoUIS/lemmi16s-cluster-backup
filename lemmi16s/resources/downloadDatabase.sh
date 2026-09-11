@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+set -o xtrace
+set -e
+
+repository=$1
+Database=`basename   $repository `
+
+release=$2
+version=`basename   $release | cut -f2 -d '_' ` 
+
+output=$3
+
+mkdir -p $repository
+echo "Download files for: "$Database
+
+if [ "$Database" = "SILVA" ]; then
+  #Download NCBI tax ID
+  wget -q -c -P $repository https://ftp.arb-silva.de//$release/Exports/taxonomy/tax_slv_ssu_${version}.acc_taxid.gz
+  gunzip -f $repository/tax_slv_ssu_${version}.acc_taxid.gz 
+  cp $repository/tax_slv_ssu_${version}.acc_taxid $repository/tax_id.txt 
+
+  #Download the Taxonomy Rank file. This maps the taxonomic rank and taxonomy to the taxid.
+  wget -q -c -P $repository https://www.arb-silva.de/fileadmin/silva_databases/$release/Exports/taxonomy/tax_slv_ssu_${version}.txt.gz
+  gunzip -f $repository/tax_slv_ssu_${version}.txt.gz
+
+  #Download the Taxonomy Map file. This maps the sequence Accessions to the Organism Name and Taxonomy IDs.
+  wget -q -c -P $repository https://www.arb-silva.de/fileadmin/silva_databases/$release/Exports/taxonomy/taxmap_slv_ssu_ref_nr_${version}.txt.gz
+  gunzip -f $repository/taxmap_slv_ssu_ref_nr_${version}.txt.gz
+
+  #Download the Taxonomy Tree file. This file contains the hierarchical relationship of the taxonomy IDs in tree form.
+  wget -q -c -P $repository https://www.arb-silva.de/fileadmin/silva_databases/$release/Exports/taxonomy/tax_slv_ssu_${version}.tre.gz
+  gunzip -f $repository/tax_slv_ssu_${version}.tre.gz
+
+  #Download the SILVA NR99 sequences (non-redundant and unaligned)
+  wget -q -c -P $repository https://www.arb-silva.de/fileadmin/silva_databases/$release/Exports/SILVA_${version}_SSURef_NR99_tax_silva_trunc.fasta.gz
+  gunzip -f $repository/SILVA_${version}_SSURef_NR99_tax_silva_trunc.fasta.gz
+  
+  #Rename the output file to standard name
+  #mv $repository/SILVA_${version}_SSURef_NR99_tax_silva_trunc.fasta $repository/$output.fasta
+  
+elif [ "$Database" = "NCBI" ]; then
+  #Download NCBI tax ID the other files are downloaded using qiime 2 plugin
+  wget -q -c -P $repository https://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
+  gunzip -f $repository/nucl_gb.accession2taxid.gz
+  #Temporal file to skip the rule
+  touch $repository/$output.fasta
+  
+elif [ "$Database" = "Greengenes" ]; then
+  version=`basename   $release | sed -r 's/[.]+/_/g' ` 
+  #Download NCBI tax ID
+  wget -q -c -P $repository https://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
+  gunzip -f $repository/nucl_gb.accession2taxid.gz
+  
+  #Download the Taxonomy Rank file.
+  wget -q -c -P $repository https://gg-sg-web.s3-us-west-2.amazonaws.com/downloads/greengenes_database/$version/${version}_genbank.map.gz
+  gunzip -f $repository/${version}_genbank.map.gz
+  
+  #Download the Taxonomy Map file.
+  wget -q -c -P $repository https://gg-sg-web.s3-us-west-2.amazonaws.com/downloads/greengenes_database/$version/${version}_taxonomy.txt.gz
+  gunzip -f $repository/${version}_taxonomy.txt.gz
+  
+  #Download the Greengenes sequences
+  wget -q -c -P $repository https://gg-sg-web.s3-us-west-2.amazonaws.com/downloads/greengenes_database/$version/${version}.fasta.gz
+  gunzip -f $repository/${version}.fasta.gz
+  
+  #Rename the output file to standard name
+  mv $repository/${version}.fasta $repository/$output.fasta 
+  mv $repository/${version}_taxonomy.txt $repository/$output.taxonomy
+
+elif [ "$Database" = "GTDB" ]; then
+  version=`basename   $release | cut -f2 -d '_' ` 
+  release=`basename   $release | cut -f1 -d '_' ` 
+  rversion=`basename  $version | cut -f1 -d '.' `
+
+  #tax dump
+  wget -c -P $repository https://data.gtdb.ecogenomic.org/releases/$release/$version/auxillary_files/ncbi_taxdump_20220917.tar.gz
+  mv $repository/ncbi_taxdump_20220917.tar.gz  $repository/taxdump.tar.gz
+
+  #Download the sequences example "release214_214.0" or "release241_214.1" 
+  wget -c -P $repository https://data.gtdb.ecogenomic.org/releases/$release/$version/genomic_files_all/ssu_all_r$rversion.tar.gz
+  tar xvzf $repository/ssu_all_r$rversion.tar.gz -C $repository
+
+  #Download metadata
+  wget -c -P $repository https://data.gtdb.ecogenomic.org/releases/$release/$version/bac120_metadata_r$rversion.tar.gz
+  tar xvzf $repository/bac120_metadata_r$rversion.tar.gz -C $repository
+
+  wget -c -P $repository https://data.gtdb.ecogenomic.org/releases/$release/$version/ar53_metadata_r$rversion.tar.gz
+  tar xvzf $repository/ar53_metadata_r$rversion.tar.gz -C $repository
+
+  #Generate taxonomy
+  editReference.py  $Database $repository/ssu_all_r$rversion.fna $repository/bac120_metadata_r$rversion.tsv,$repository/ar53_metadata_r$rversion.tsv \
+                    $repository/$output.fasta $repository/$output.taxonomy
+
+  #TaxID 
+  grep '>' $repository/$output.fasta | awk -F "\t" '{print $1"\t"$2}' | cut -f2 -d'>' > $repository/tax_id.txt 
+    
+  
+elif [ "$Database" = "rrnDB" ]; then
+  #Download the sequences 
+  wget -q -c -P $repository https://rrndb.umms.med.umich.edu/static/download/rrnDB-${release}_16S_rRNA.fasta.zip
+  zcat $repository/rrnDB-${release}_16S_rRNA.fasta.zip  > $repository/$output.tmp1
+  
+  #Download metadata
+  wget -q -c -P $repository https://rrndb.umms.med.umich.edu/static/download/rrnDB-${release}.tsv.zip
+  zcat $repository/rrnDB-${release}.tsv.zip  > $repository/$output.tmp2
+  
+  #Generate taxonomy
+  editReference.py  $Database $repository/$output.tmp1 $repository/$output.tmp2  $repository/$output.fasta $repository/$output.taxonomy
+
+  #TaxID 
+  grep '>' $repository/$output.fasta | awk -F "\t" '{print $1"\t"$2}' | cut -f2 -d'>' > $repository/tax_id.txt 
+
+  #tax dump
+  wget -q -c -P $repository ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz  
+else
+    echo "Failed, please select a valid database"
+    exit 1
+fi

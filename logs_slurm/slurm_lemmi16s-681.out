@@ -1,0 +1,509 @@
+==========================================
+LEMMI16s Job started on Slurm cluster
+Job ID: 681
+Node: rbp5-1
+Date: Tue Sep  8 15:04:53 -05 2026
+User: grupo1
+==========================================
+Running lemmi16s_analysis with 4 cores...
+Running analyses...
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/runs/kraken2_16s_HOMD_v4_GTDB.yaml
+4
+ >> Checking for Valid Options...
+ >> Running Bracken 
+      >> python src/est_abundance.py -i query.report -o query.bracken -k /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database/database150mers.kmer_distrib -l G -t 10
+PROGRAM START TIME: 09-08-2026 20:05:37
+BRACKEN SUMMARY (Kraken report: query.report)
+    >>> Threshold: 10 
+    >>> Number of genuses in sample: 1 
+	  >> Number of genuses with reads > threshold: 1 
+	  >> Number of genuses with reads < threshold: 0 
+    >>> Total reads in sample: 499995
+	  >> Total reads kept at genuses level (reads > threshold): 499995
+	  >> Total reads discarded (genuses reads < threshold): 0
+	  >> Reads distributed: 0
+	  >> Reads not distributed (eg. no genuses above threshold): 0
+	  >> Unclassified reads: 0
+BRACKEN OUTPUT PRODUCED: query.bracken
+PROGRAM END TIME: 09-08-2026 20:05:37
+  Bracken complete.
+task_wrapper.sh:task completed (exit code: 0)
+4
+ >> Checking for Valid Options...
+ >> Running Bracken 
+      >> python src/est_abundance.py -i query.report -o query.bracken -k /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database/database150mers.kmer_distrib -l G -t 10
+PROGRAM START TIME: 09-08-2026 20:06:09
+BRACKEN SUMMARY (Kraken report: query.report)
+    >>> Threshold: 10 
+    >>> Number of genuses in sample: 1 
+	  >> Number of genuses with reads > threshold: 1 
+	  >> Number of genuses with reads < threshold: 0 
+    >>> Total reads in sample: 499995
+	  >> Total reads kept at genuses level (reads > threshold): 499995
+	  >> Total reads discarded (genuses reads < threshold): 0
+	  >> Reads distributed: 0
+	  >> Reads not distributed (eg. no genuses above threshold): 0
+	  >> Unclassified reads: 0
+BRACKEN OUTPUT PRODUCED: query.bracken
+PROGRAM END TIME: 09-08-2026 20:06:10
+  Bracken complete.
+task_wrapper.sh:task completed (exit code: 0)
+4
+ >> Checking for Valid Options...
+ >> Running Bracken 
+      >> python src/est_abundance.py -i query.report -o query.bracken -k /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database/database150mers.kmer_distrib -l G -t 10
+PROGRAM START TIME: 09-08-2026 20:06:42
+BRACKEN SUMMARY (Kraken report: query.report)
+    >>> Threshold: 10 
+    >>> Number of genuses in sample: 1 
+	  >> Number of genuses with reads > threshold: 1 
+	  >> Number of genuses with reads < threshold: 0 
+    >>> Total reads in sample: 499995
+	  >> Total reads kept at genuses level (reads > threshold): 499995
+	  >> Total reads discarded (genuses reads < threshold): 0
+	  >> Reads distributed: 0
+	  >> Reads not distributed (eg. no genuses above threshold): 0
+	  >> Unclassified reads: 0
+BRACKEN OUTPUT PRODUCED: query.bracken
+PROGRAM END TIME: 09-08-2026 20:06:42
+  Bracken complete.
+task_wrapper.sh:task completed (exit code: 0)
+4
+ >> Checking for Valid Options...
+ >> Running Bracken 
+      >> python src/est_abundance.py -i query.report -o query.bracken -k /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database/database150mers.kmer_distrib -l G -t 10
+PROGRAM START TIME: 09-08-2026 20:07:15
+BRACKEN SUMMARY (Kraken report: query.report)
+    >>> Threshold: 10 
+    >>> Number of genuses in sample: 1 
+	  >> Number of genuses with reads > threshold: 1 
+	  >> Number of genuses with reads < threshold: 0 
+    >>> Total reads in sample: 499995
+	  >> Total reads kept at genuses level (reads > threshold): 499995
+	  >> Total reads discarded (genuses reads < threshold): 0
+	  >> Reads distributed: 0
+	  >> Reads not distributed (eg. no genuses above threshold): 0
+	  >> Unclassified reads: 0
+BRACKEN OUTPUT PRODUCED: query.bracken
+PROGRAM END TIME: 09-08-2026 20:07:15
+  Bracken complete.
+task_wrapper.sh:task completed (exit code: 0)
+4
+ >> Checking for Valid Options...
+ >> Running Bracken 
+      >> python src/est_abundance.py -i query.report -o query.bracken -k /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database/database150mers.kmer_distrib -l G -t 10
+PROGRAM START TIME: 09-08-2026 20:07:49
+BRACKEN SUMMARY (Kraken report: query.report)
+    >>> Threshold: 10 
+    >>> Number of genuses in sample: 1 
+	  >> Number of genuses with reads > threshold: 1 
+	  >> Number of genuses with reads < threshold: 0 
+    >>> Total reads in sample: 499995
+	  >> Total reads kept at genuses level (reads > threshold): 499995
+	  >> Total reads discarded (genuses reads < threshold): 0
+	  >> Reads distributed: 0
+	  >> Reads not distributed (eg. no genuses above threshold): 0
+	  >> Unclassified reads: 0
+BRACKEN OUTPUT PRODUCED: query.bracken
+PROGRAM END TIME: 09-08-2026 20:07:49
+  Bracken complete.
+task_wrapper.sh:task completed (exit code: 0)
+none=none
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/runs/lotus303_16s_HM_Contaminated.yaml
+4
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:00 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 4
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    4
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:00 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:10 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:12 Finished primary read processing with sdm:
+          Reads processed: 8,208; 8,208 (pair 1;pair 2)
+          Accepted (High qual): 189; 0 (0; 1 end-trimmed)
+          Rejected: 8,019; 8,208
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:12 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:12 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Found 47 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:18 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:18 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 47 OTU's (1081 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+Building UDB database /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta (takes some time the first time)
+--------------------------------------------------------------------------------
+ 00:08:27 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:09:03 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 1081
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	100	100
+Class	100	100
+Order	100	100
+Family	100	100
+Genus	87	70
+Species	19	69
+
+--------------------------------------------------------------------------------
+ 00:09:03 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:09:18 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+task_wrapper.sh:task completed (exit code: 0)
+4
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:00 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 4
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    4
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:00 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:10 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:11 Finished primary read processing with sdm:
+          Reads processed: 11,159; 11,159 (pair 1;pair 2)
+          Accepted (High qual): 254; 0 (0; 0 end-trimmed)
+          Rejected: 10,905; 11,159
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:11 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:11 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:11 Found 42 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:13 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 42 OTU's (2014 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:24 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 2014
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	99	83
+Class	99	83
+Order	99	83
+Family	95	71
+Genus	78	61
+Species	52	54
+
+--------------------------------------------------------------------------------
+ 00:00:25 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:26 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+task_wrapper.sh:task completed (exit code: 0)
+4
+running illumina
+RefDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta requested. Setting similarity based search to default (-taxAligner 4) option to search /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta.
+
+░▒▓█▓▒░      ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓███████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░  
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
+
+--------------------------------------------------------------------------------
+ 00:00:00 LotuS 3.03
+          COMMAND
+          perl /shared/users/grupo1/lemmi16s_env/bin/lotus3 -derepMin
+          1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/
+          -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv
+          -t 4
+--------------------------------------------------------------------------------
+------------ I/O configuration --------------
+Input       reads/
+Output      reads-output/
+SDM options /shared/users/grupo1/lemmi16s_env/share/lotus3-3.03-0/configs/sdm_miSeq.txt
+TempDir     reads-output//tmpFiles/
+NumCores    4
+------------ Pipeline config   --------------
+Sequencing platform     miseq
+Amplicon target         bacteria, SSU
+Dereplication filter    -derepMin 1:1,1:2,1:3
+Clustering algorithm    UPARSE -> OTU's
+Read mapping to OTU     minimap2, at 0.97 %id cutoff
+Precluster read merging No
+Ref Chimera checking    Yes (DB=DB//rdp_gold.fa, -chim_skew 2)
+deNovo Chimera check    Yes
+Tax assignment          VSEARCH (-LCA_frac 0.8, -LCA_cover 0.5, -LCA_idthresh 97,95,88,83,81,78,0)
+ReferenceDatabase       custom
+RefDB location          /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+OTU phylogeny           Yes (mafft, fasttree2)
+Unclassified OTU's      Kept in matrix
+--------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:00 Reading mapping file
+          Sequence files are indicated in mapping file.
+          Switching to paired end read mode
+          Found "SequencingRun" column, with 1 categories (Run1)
+--------------------------------------------------------------------------------
+*********
+Warnings for mapping file 
+reads/miSeqMap.sm.txt 
+Abort by pressing Ctrl+c (10 sec wait)
+*********
+--------------------------------------------------------------------------------
+ 00:00:11 Demultiplexing, filtering, dereplicating input files, this
+          might take some time..
+          check progress at reads-output//LotuSLogS/LotuS_progout.log
+ 00:00:12 Finished primary read processing with sdm:
+          Reads processed: 10,416; 10,416 (pair 1;pair 2)
+          Accepted (High qual): 226; 0 (0; 0 end-trimmed)
+          Rejected: 10,190; 10,416
+          For an extensive report see reads-output//LotuSLogS//demulti.log
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:12 UPARSE OTU clustering
+          Cluster at 97
+ 00:00:13 Finished
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Starting backmapping of 
+            - mid-quality reads
+          to OTU's using minimap2 at >= 0.97 identity.
+--------------------------------------------------------------------------------
+ 00:00:13 Extending and merging pairs of OTU Seeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:13 Found 40 fasta seed sequences based on seed extension and read merging
+--------------------------------------------------------------------------------
+No ref based chimera detection
+--------------------------------------------------------------------------------
+ 00:00:14 0 OTU's removed with LULU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:14 Postfilter:
+          Extended logs active, contaminant and chimeric matrix will be created.
+          After filtering 40 OTU's (1546 reads) remaining in matrix.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:14 Assigning taxonomy against /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta
+          using VSEARCH
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:25 Calculating Taxonomic Abundance Tables from custom assignments
+--------------------------------------------------------------------------------
+
+Calculating higher abundance levels
+Adding 0 unclassified OTU's to output matrices
+Total reads in matrix: 1546
+TaxLvl	%Assigned_Reads	%Assigned_OTUs
+Phylum	100	100
+Class	100	100
+Order	100	100
+Family	96	88
+Genus	82	62
+Species	36	54
+
+--------------------------------------------------------------------------------
+ 00:00:26 Building tree (fasttree) and aligning (mafft) OTUs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+ 00:00:27 LotuS3 finished. Output in:
+          reads-output/
+                    Next steps:          
+          - Phylogeny: OTU phylogentic tree available in reads-output//OTUphylo.nwk
+          - .biom: reads-output//OTU.biom contains biom formatted output
+          - Alpha diversity/rarefaction curves: rtk (available as
+          R package or in bin/rtk)
+          - LotuSLogS/ contains run statistics (useful for describing
+          data/amount of reads/quality and citations to programs used
+          - Tutorial: Visit http://lotus2.earlham.ac.uk for a numerical
+          ecology tutorial
+--------------------------------------------------------------------------------
+
+The following WARNINGS occured:
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+
+task_wrapper.sh:task completed (exit code: 0)
+none=none
+Running evaluations...
+... for /shared/users/grupo1/lemmi16s/benchmark/yaml/instances/HM_Contaminated_Soil.yaml

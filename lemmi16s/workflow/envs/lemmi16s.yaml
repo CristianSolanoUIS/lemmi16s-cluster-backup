@@ -1,0 +1,12 @@
+name: lemmi16s
+channels:
+  - bioconda
+  - etetoolkit
+  - conda-forge
+dependencies:
+  - snakemake >= 6.0.0
+  - ete3
+  - numpy
+  - pandas >= 1.2.0
+  - pyyaml
+  - biopython

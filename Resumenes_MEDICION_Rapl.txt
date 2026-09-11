@@ -1,0 +1,113 @@
+----------- KRAKEN2 (BD: GTDB) ---------------
+
+=== Resumen de medicion (baseline_Kraken2) ===
+Inicio:              2026-09-07 20:00:17.975699
+Fin:                 2026-09-07 20:10:21.351271
+Duracion:            603.4 s (10.06 min)
+Muestras tomadas:    603
+Energia total:       0.3528 Wh
+Potencia promedio:   2.10 W
+CSV guardado en:     energia_baseline_Kraken2_20260907_200017.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+=== Resumen de medicion (Kraken2_Run) ===
+Inicio:              2026-09-06 16:15:24.789640
+Fin:                 2026-09-06 16:16:29.826436
+Duracion:            65.0 s (1.08 min)
+Muestras tomadas:    65
+Energia total:       0.6101 Wh
+Potencia promedio:   33.77 W
+CSV guardado en:     energia_Kraken2_Run_20260906_161524.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+Log_Lemmi16s_RUN:
+
+Complete log: /home/cristian-solano/lemmi16s/.snakemake/log/2026-09-06T161553.636819.snakemake.log
+updating structure.json...
+LEMMI16s DONE
+
+real	1m3,364s
+user	2m55,389s
+sys	0m27,586s
+
+
+----------- LOTUS3 (BD: SILVA) --------------------
+
+=== Resumen de medicion (baseline_LotuS3) ===
+Inicio:              2026-09-06 15:53:50.137079
+Fin:                 2026-09-06 16:03:56.504529
+Duracion:            606.4 s (10.11 min)
+Muestras tomadas:    606
+Energia total:       0.3602 Wh
+Potencia promedio:   2.14 W
+CSV guardado en:     energia_baseline_LotuS3_20260906_155350.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+
+=== Resumen de medicion (LotuS3_Run) ===
+Inicio:              2026-09-06 16:25:26.987065
+Fin:                 2026-09-06 16:30:34.112034
+Duracion:            307.1 s (5.12 min)
+Muestras tomadas:    307
+Energia total:       1.5399 Wh
+Potencia promedio:   18.05 W
+CSV guardado en:     energia_LotuS3_Run_20260906_162526.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+Log_Lemmi16s_RUN:
+
+Complete log: /home/cristian-solano/lemmi16s/.snakemake/log/2026-09-06T163016.663367.snakemake.log
+updating structure.json...
+LEMMI16s DONE
+
+real	5m5,462s
+user	1m24,921s
+sys	0m14,179s
+
+
+----------- QIIME2 (BD: SILVA) --------------------
+
+=== Resumen de medicion (baseline_Qiime2) ===
+Inicio:              2026-09-07 18:14:24.759296
+Fin:                 2026-09-07 18:24:32.138710
+Duracion:            607.4 s (10.12 min)
+Muestras tomadas:    607
+Energia total:       0.3393 Wh
+Potencia promedio:   2.01 W
+CSV guardado en:     energia_baseline_Qiime2_20260907_181424.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+=== Resumen de medicion (Qiime2_Run) ===
+Inicio:              2026-09-07 18:26:40.088759
+Fin:                 2026-09-07 19:52:16.578064
+Duracion:            5136.5 s (85.61 min)
+Muestras tomadas:    5135
+Energia total:       29.7708 Wh
+Potencia promedio:   20.87 W
+CSV guardado en:     energia_Qiime2_Run_20260907_182640.csv
+
+Recuerda: resta el consumo baseline (standby) medido por separado
+para obtener la energia neta atribuible al pipeline.
+
+Complete log: /home/cristian-solano/lemmi16s/.snakemake/log/2026-09-07T195125.873456.snakemake.log
+updating structure.json...
+LEMMI16s DONE
+
+real	85m34,769s
+user	3m55,736s
+sys	0m28,165s
+

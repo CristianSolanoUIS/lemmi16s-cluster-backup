@@ -1,0 +1,40 @@
+# Environments and virtualenvs
+lemmi16s_env/
+qiime2_arm64/
+Pi-Monitor/venv/
+*venv*/
+*.env
+
+# Large datasets and reference databases
+instances/
+**/instances/
+*.fasta
+*.fastaORG
+*.fastq
+*.fq
+*.fq.gz
+*.fastq.gz
+*.k2d
+*.qza
+*.qzv
+
+# Temporary and cache files
+tmp/
+**/tmp/
+*.tmp
+__pycache__/
+*.py[cod]
+*$py.class
+.snakemake/
+
+# Compiled objects
+*.o
+*.d
+
+# Singularity / Apptainer images (>100MB)
+*.sif
+*.img
+
+# OS / Editor junk
+.DS_Store
+.vscode/

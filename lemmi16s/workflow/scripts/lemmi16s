@@ -1,0 +1,67 @@
+#!/bin/bash
+shopt -s nullglob
+set -e
+if [[ -z "$LEMMI16s_ROOT" ]]; then
+    echo "Must set LEMMI16s_ROOT in environment" 1>&2
+    exit 1
+fi
+
+dt=$(date +%s)
+
+if (echo 7.8.0; snakemake --version ) | sort -Vr | tail -n 1 | grep -q "7.8.0"
+then
+    rerun="--rerun-triggers mtime"
+else
+    rerun=""
+fi
+
+
+echo "Setting up the repository..."
+snakemake ${rerun} --singularity-args "-B $LEMMI16s_ROOT:$LEMMI16s_ROOT" --rerun-incomplete --printshellcmds --snakefile ${LEMMI16s_ROOT}/workflow/rules/repository.smk --configfile ${LEMMI16s_ROOT}/config/config.yaml --directory ${LEMMI16s_ROOT} --reason --config datetime=$dt $@
+
+echo "Creating samples..."
+for definition in ${LEMMI16s_ROOT}/benchmark/yaml/instances/*.yaml
+do
+echo "... for "$definition
+cat $definition ${LEMMI16s_ROOT}/config/config.yaml >  ${LEMMI16s_ROOT}/.definition.yaml
+filename=$(basename $definition)
+echo "instance: $(echo $filename | rev | cut -f2-10 -d"." | rev)" >> ${LEMMI16s_ROOT}/.definition.yaml
+snakemake ${rerun} --singularity-args "-B $LEMMI16s_ROOT:$LEMMI16s_ROOT" --rerun-incomplete --printshellcmds --snakefile ${LEMMI16s_ROOT}/workflow/rules/sample_creation.smk --configfile ${LEMMI16s_ROOT}/.definition.yaml --directory ${LEMMI16s_ROOT} --reason --config datetime=$dt $@
+mv  ${LEMMI16s_ROOT}/.definition.yaml ${LEMMI16s_ROOT}/benchmark/yaml/processed_archives/$(basename $definition).instance_definition.$dt
+done
+
+echo "Running analyses..."
+for analysis in ${LEMMI16s_ROOT}/benchmark/yaml/runs/*.yaml
+do
+echo "... for "$analysis
+cat $analysis ${LEMMI16s_ROOT}/config/config.yaml > ${LEMMI16s_ROOT}/.analysis.yaml
+cat ${LEMMI16s_ROOT}/benchmark/yaml/instances/$(cat ${LEMMI16s_ROOT}/.analysis.yaml | grep instance | cut -f2 -d":" | tr -d " ").yaml >> ${LEMMI16s_ROOT}/.analysis.yaml
+snakemake ${rerun} --singularity-args "-B $LEMMI16s_ROOT:$LEMMI16s_ROOT" --rerun-incomplete --printshellcmds --snakefile ${LEMMI16s_ROOT}/workflow/rules/analysis.smk --configfile ${LEMMI16s_ROOT}/.analysis.yaml --directory ${LEMMI16s_ROOT} --reason --config datetime=$dt $@
+mv ${LEMMI16s_ROOT}/.analysis.yaml ${LEMMI16s_ROOT}/benchmark/yaml/processed_archives/$(basename $analysis).$dt
+done
+
+echo "Running evaluations..."
+for evaluation in ${LEMMI16s_ROOT}/benchmark/yaml/instances/*.yaml
+do
+echo "... for "$evaluation
+cat $evaluation ${LEMMI16s_ROOT}/config/config.yaml > ${LEMMI16s_ROOT}/.evaluation.yaml
+filename=$(basename $evaluation)
+echo "instance_name: $(echo $filename | rev | cut -f2-10 -d"." | rev)" >> ${LEMMI16s_ROOT}/.evaluation.yaml
+snakemake ${rerun} --singularity-args "-B $LEMMI16s_ROOT:$LEMMI16s_ROOT" --rerun-incomplete --printshellcmds --snakefile ${LEMMI16s_ROOT}/workflow/rules/eval.smk --configfile ${LEMMI16s_ROOT}/.evaluation.yaml --directory ${LEMMI16s_ROOT} --reason --config datetime=$dt $@
+mv ${LEMMI16s_ROOT}/.evaluation.yaml ${LEMMI16s_ROOT}/benchmark/yaml/processed_archives/$(basename $evaluation).evaluation.yaml.$dt
+done
+
+echo "updating structure.json..."
+echo "{" > ${LEMMI16s_ROOT}/benchmark/final_results/structure.json.tmp
+for structure in ${LEMMI16s_ROOT}/benchmark/final_results/*.structure.json
+do
+    cat $structure >> ${LEMMI16s_ROOT}/benchmark/final_results/structure.json.tmp
+    echo -e "," >> ${LEMMI16s_ROOT}/benchmark/final_results/structure.json.tmp
+done
+sed \$d ${LEMMI16s_ROOT}/benchmark/final_results/structure.json.tmp > ${LEMMI16s_ROOT}/benchmark/final_results/structure.json
+echo -e "\t}\n}" >> ${LEMMI16s_ROOT}/benchmark/final_results/structure.json
+rm ${LEMMI16s_ROOT}/benchmark/final_results/structure.json.tmp
+
+echo "LEMMI16s DONE"
+
+

@@ -1,0 +1,37 @@
+==========================================================
+=== INICIO DE TRABAJO SLURM: 822 (e002) ===
+==========================================================
+Nodo asignado:   rbp5-1
+CPUs asignados:  4
+Muestra:         e002
+Fecha y hora:    Wed Sep  9 15:27:57 -05 2026
+Directorio base: /shared/users/grupo1/lemmi16s
+==========================================================
+[TELEMETRIA] Iniciando medicion de energia RPi5 en rbp5-1...
+[TELEMETRIA] Proceso de medicion corriendo con PID 72961
+[PIPELINE] Iniciando ejecucion de QIIME 2 para alfa_v1v2_SILVA-e002...
+=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 4 NUCLEOS ===
+[PASO 1/5] Importando secuencias demux...
+Imported manifest.tsv as PairedEndFastqManifestPhred33 to demux.qza
+[PASO 2/5] Filtrado de calidad por q-score...
+Saved SampleData[SequencesWithQuality] to: demux-filtered.qza
+Saved QualityFilterStats to: demux-filter-stats.qza
+[PASO 3/5] Denoising y filtrado con Deblur (usando 4 hilos)...
+Saved FeatureTable[Frequency] to: table-deblur.qza
+Saved FeatureData[Sequence] to: rep-seqs-deblur.qza
+Saved DeblurStats to: deblur-stats.qza
+[PASO 4/5] Clasificacion taxonomica Naive Bayes con classify-sklearn (usando 4 hilos)...
+Saved FeatureData[Taxonomy] to: taxonomy.qza
+[PASO 5/5] Colapso taxonomico y exportacion de resultados...
+Saved FeatureTable[Frequency] to: phyla-table.qza
+Exported phyla-table.qza as BIOMV210DirFmt to directory .
+=== ANALISIS QIIME2 COMPLETADO CON EXITO ===
+[TELEMETRIA] Deteniendo proceso de medicion (72961)...
+==========================================================
+=== RESUMEN DE FINALIZACION (e002) ===
+==========================================================
+Fecha y hora fin: Wed Sep  9 15:56:06 -05 2026
+Duracion total:   1688 segundos (28 min 8 s)
+Codigo de salida: 0
+[RESULTADO] Exito! Archivo de predicciones generado: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/qiime2_20228_lemmi16s.alfa_v1v2_SILVA-e002.predictions.tsv
+==========================================================

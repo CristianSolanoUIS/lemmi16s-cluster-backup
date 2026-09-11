@@ -1,0 +1,528 @@
+/shared/users/grupo1/lemmi16s_env/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.21) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Singularity containers: ignored
+Job stats:
+job             count
+------------  -------
+run_analysis        5
+target              1
+total               6
+
+Select jobs to execute...
+/shared/users/grupo1/lemmi16s_env/lib/python3.10/site-packages/stopit/__init__.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+[Tue Sep  8 15:05:06 2026]
+Job 5: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.runtime_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh kraken_213_lemmi16s         HOMD_v4_GTDB-c002 /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c002         /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.predictions.tsv 'none=none' analysis_HOMD_v4_GTDB-c002
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/memory.analysis_HOMD_v4_GTDB-c002.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/runtime.analysis_HOMD_v4_GTDB-c002.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ sample_folder=HOMD_v4_GTDB-c002
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c002
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.predictions.tsv
++ mkdir -p tmp_HOMD_v4_GTDB-c002
++ cd tmp_HOMD_v4_GTDB-c002
++ '[' -z ']'
+++ nproc
++ cpus=4
++ kraken2 --threads 4 --db /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database --output query.out --report query.report --paired /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c002/queryReads1.fq /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c002/queryReads2.fq
+Loading database information... done.
+499995 sequences (200.00 Mbp) processed in 24.352s (1231.9 Kseq/m, 492.77 Mbp/m).
+  499995 sequences classified (100.00%)
+  0 sequences unclassified (0.00%)
++ bracken -d /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database -i query.report -o query.bracken -l G -r 150
+>> Checking report file: query.report
++ editResult.py query_bracken_genuses.report results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.predictions.tsv
+[Tue Sep  8 15:05:41 2026]
+Finished job 5.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:05:41 2026]
+Job 3: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.predictions.tsv
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh kraken_213_lemmi16s         HOMD_v4_GTDB-e002 /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002         /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.predictions.tsv 'none=none' analysis_HOMD_v4_GTDB-e002
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/memory.analysis_HOMD_v4_GTDB-e002.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/runtime.analysis_HOMD_v4_GTDB-e002.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ sample_folder=HOMD_v4_GTDB-e002
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.predictions.tsv
++ mkdir -p tmp_HOMD_v4_GTDB-e002
++ cd tmp_HOMD_v4_GTDB-e002
++ '[' -z ']'
+++ nproc
++ cpus=4
++ kraken2 --threads 4 --db /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database --output query.out --report query.report --paired /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002/queryReads1.fq /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e002/queryReads2.fq
+Loading database information... done.
+499995 sequences (200.00 Mbp) processed in 22.599s (1327.5 Kseq/m, 530.98 Mbp/m).
+  499995 sequences classified (100.00%)
+  0 sequences unclassified (0.00%)
++ bracken -d /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database -i query.report -o query.bracken -l G -r 150
+>> Checking report file: query.report
++ editResult.py query_bracken_genuses.report results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.predictions.tsv
+[Tue Sep  8 15:06:12 2026]
+Finished job 3.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:06:12 2026]
+Job 1: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.runtime_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh kraken_213_lemmi16s         HOMD_v4_GTDB-e001 /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e001         /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.predictions.tsv 'none=none' analysis_HOMD_v4_GTDB-e001
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/memory.analysis_HOMD_v4_GTDB-e001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/runtime.analysis_HOMD_v4_GTDB-e001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ sample_folder=HOMD_v4_GTDB-e001
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e001
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.predictions.tsv
++ mkdir -p tmp_HOMD_v4_GTDB-e001
++ cd tmp_HOMD_v4_GTDB-e001
++ '[' -z ']'
+++ nproc
++ cpus=4
++ kraken2 --threads 4 --db /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database --output query.out --report query.report --paired /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e001/queryReads1.fq /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-e001/queryReads2.fq
+Loading database information... done.
+499995 sequences (200.00 Mbp) processed in 23.447s (1279.5 Kseq/m, 511.79 Mbp/m).
+  499995 sequences classified (100.00%)
+  0 sequences unclassified (0.00%)
++ bracken -d /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database -i query.report -o query.bracken -l G -r 150
+>> Checking report file: query.report
++ editResult.py query_bracken_genuses.report results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.predictions.tsv
+[Tue Sep  8 15:06:46 2026]
+Finished job 1.
+3 of 6 steps (50%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:06:46 2026]
+Job 4: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.memory_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh kraken_213_lemmi16s         HOMD_v4_GTDB-c001 /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c001         /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.predictions.tsv 'none=none' analysis_HOMD_v4_GTDB-c001
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/memory.analysis_HOMD_v4_GTDB-c001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/runtime.analysis_HOMD_v4_GTDB-c001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ sample_folder=HOMD_v4_GTDB-c001
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c001
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.predictions.tsv
++ mkdir -p tmp_HOMD_v4_GTDB-c001
++ cd tmp_HOMD_v4_GTDB-c001
++ '[' -z ']'
+++ nproc
++ cpus=4
++ kraken2 --threads 4 --db /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database --output query.out --report query.report --paired /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c001/queryReads1.fq /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c001/queryReads2.fq
+Loading database information... done.
+499995 sequences (200.00 Mbp) processed in 23.184s (1294.0 Kseq/m, 517.59 Mbp/m).
+  499995 sequences classified (100.00%)
+  0 sequences unclassified (0.00%)
++ bracken -d /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database -i query.report -o query.bracken -l G -r 150
+>> Checking report file: query.report
++ editResult.py query_bracken_genuses.report results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.predictions.tsv
+[Tue Sep  8 15:07:18 2026]
+Finished job 4.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:07:18 2026]
+Job 6: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.runtime_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh kraken_213_lemmi16s         HOMD_v4_GTDB-c003 /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c003         /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.predictions.tsv 'none=none' analysis_HOMD_v4_GTDB-c003
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/memory.analysis_HOMD_v4_GTDB-c003.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/runtime.analysis_HOMD_v4_GTDB-c003.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ sample_folder=HOMD_v4_GTDB-c003
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c003
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.predictions.tsv
++ mkdir -p tmp_HOMD_v4_GTDB-c003
++ cd tmp_HOMD_v4_GTDB-c003
++ '[' -z ']'
+++ nproc
++ cpus=4
++ kraken2 --threads 4 --db /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database --output query.out --report query.report --paired /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c003/queryReads1.fq /shared/users/grupo1/lemmi16s/benchmark/instances/HOMD_v4_GTDB/HOMD_v4_GTDB-c003/queryReads2.fq
+Loading database information... done.
+499995 sequences (200.00 Mbp) processed in 25.615s (1171.2 Kseq/m, 468.47 Mbp/m).
+  499995 sequences classified (100.00%)
+  0 sequences unclassified (0.00%)
++ bracken -d /shared/users/grupo1/lemmi16s/benchmark/tmp/kraken2_16s_HOMD_v4_GTDB/tmp_HOMD_v4_GTDB/database -i query.report -o query.bracken -l G -r 150
+>> Checking report file: query.report
++ editResult.py query_bracken_genuses.report results.tsv summary_taxonomy.tsv
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.predictions.tsv
+[Tue Sep  8 15:07:50 2026]
+Finished job 6.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:07:50 2026]
+localrule target:
+    input: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB.runtime_training.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB.memory_training.txt
+    jobid: 0
+    reason: Input files updated by another job: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c003.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-c002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/kraken_213_lemmi16s.HOMD_v4_GTDB-e001.runtime_analysis.txt
+    resources: tmpdir=/tmp
+
+[Tue Sep  8 15:07:50 2026]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: ../../../.snakemake/log/2026-09-08T150456.149785.snakemake.log
+/shared/users/grupo1/lemmi16s_env/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.21) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Singularity containers: ignored
+Job stats:
+job             count
+------------  -------
+run_analysis        3
+target              1
+total               4
+
+Select jobs to execute...
+/shared/users/grupo1/lemmi16s_env/lib/python3.10/site-packages/stopit/__init__.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+[Tue Sep  8 15:07:57 2026]
+Job 3: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.memory_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh lotus_303_lemmi16s         illumina HM_Contaminated_Soil-c001 /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c001         /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.predictions.tsv 'none=none' analysis_HM_Contaminated_Soil-c001
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/memory.analysis_HM_Contaminated_Soil-c001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/runtime.analysis_HM_Contaminated_Soil-c001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ technology=illumina
++ sample_folder=HM_Contaminated_Soil-c001
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c001
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters['AVGQUAL']=20
++ parameters['HEADCROP']=12
++ parameters['LEADING']=3
++ parameters['TRAILING']=3
++ parameters['MINLEN']=75
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_HM_Contaminated_Soil-c001
++ cd tmp_HM_Contaminated_Soil-c001
++ '[' -z ']'
+++ nproc
++ cpus=4
++ '[' illumina = illumina ']'
++ echo 'running illumina'
++ mkdir -p reads
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c001/queryReads1.fq reads/.
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c001/queryReads2.fq reads/.
++ touch reads/miSeqMap.sm.txt
++ echo -e '#SampleID\tfastqFile\tSequencingRun'
++ echo -e 'Sample1\tqueryReads1.fq,queryReads2.fq\tRun1'
++ lotus3 -derepMin 1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/ -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv -t 4
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+ 
+tput: No value for $TERM and no -T specified
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+ 
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+ 
+cat: reads-output//tmpFiles//lulu_match_list.txt.rm: No such file or directory
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
++ biom convert -i reads-output/OTU.biom -o results.txt --to-tsv --header-key taxonomy
++ editResult.py results.txt results.tsv summary_taxonomy.tsv
+/shared/users/grupo1/lemmi16s/resources/candidate_containers/lotus_303_lemmi16s/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.predictions.tsv
+[Tue Sep  8 15:17:19 2026]
+Finished job 3.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:17:19 2026]
+Job 4: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.runtime_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh lotus_303_lemmi16s         illumina HM_Contaminated_Soil-c002 /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002         /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.predictions.tsv 'none=none' analysis_HM_Contaminated_Soil-c002
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/memory.analysis_HM_Contaminated_Soil-c002.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/runtime.analysis_HM_Contaminated_Soil-c002.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ technology=illumina
++ sample_folder=HM_Contaminated_Soil-c002
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters['AVGQUAL']=20
++ parameters['HEADCROP']=12
++ parameters['LEADING']=3
++ parameters['TRAILING']=3
++ parameters['MINLEN']=75
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_HM_Contaminated_Soil-c002
++ cd tmp_HM_Contaminated_Soil-c002
++ '[' -z ']'
+++ nproc
++ cpus=4
++ '[' illumina = illumina ']'
++ echo 'running illumina'
++ mkdir -p reads
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002/queryReads1.fq reads/.
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-c002/queryReads2.fq reads/.
++ touch reads/miSeqMap.sm.txt
++ echo -e '#SampleID\tfastqFile\tSequencingRun'
++ echo -e 'Sample1\tqueryReads1.fq,queryReads2.fq\tRun1'
++ lotus3 -derepMin 1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/ -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv -t 4
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+ 
+tput: No value for $TERM and no -T specified
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+ 
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+ 
+cat: reads-output//tmpFiles//lulu_match_list.txt.rm: No such file or directory
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
++ biom convert -i reads-output/OTU.biom -o results.txt --to-tsv --header-key taxonomy
++ editResult.py results.txt results.tsv summary_taxonomy.tsv
+/shared/users/grupo1/lemmi16s/resources/candidate_containers/lotus_303_lemmi16s/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.predictions.tsv
+[Tue Sep  8 15:17:50 2026]
+Finished job 4.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:17:50 2026]
+Job 1: run analysis on calibrarion and evaluation sets...
+Reason: Missing output files: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.memory_analysis.txt
+
+
+
+        # run the tool
+          /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/task_wrapper.sh         /shared/users/grupo1/lemmi16s/benchmark/../workflow/scripts/run_tool_analysis.sh lotus_303_lemmi16s         illumina HM_Contaminated_Soil-e001 /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-e001         /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.predictions.tsv 'none=none' analysis_HM_Contaminated_Soil-e001
+
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/memory.analysis_HM_Contaminated_Soil-e001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.memory_analysis.txt
+        mv /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/runtime.analysis_HM_Contaminated_Soil-e001.txt /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.runtime_analysis.txt
+
+        # remove stopped docker containers
+        
+
+        
++ set -e
++ technology=illumina
++ sample_folder=HM_Contaminated_Soil-e001
++ query=/shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-e001
++ model_path=/shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil
++ output_file=/shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.predictions.tsv
++ aux_parameters=none=none
++ declare -A parameters
++ parameters['AVGQUAL']=20
++ parameters['HEADCROP']=12
++ parameters['LEADING']=3
++ parameters['TRAILING']=3
++ parameters['MINLEN']=75
++ IFS=,
++ read -a fields
++ for i in "${fields[@]}"
+++ echo none=none
+++ cut -d= -f1
++ key=none
+++ echo none=none
+++ cut -d= -f2
++ value=none
++ parameters[$key]=none
++ mkdir -p tmp_HM_Contaminated_Soil-e001
++ cd tmp_HM_Contaminated_Soil-e001
++ '[' -z ']'
+++ nproc
++ cpus=4
++ '[' illumina = illumina ']'
++ echo 'running illumina'
++ mkdir -p reads
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-e001/queryReads1.fq reads/.
++ cp /shared/users/grupo1/lemmi16s/benchmark/instances/HM_Contaminated_Soil/HM_Contaminated_Soil-e001/queryReads2.fq reads/.
++ touch reads/miSeqMap.sm.txt
++ echo -e '#SampleID\tfastqFile\tSequencingRun'
++ echo -e 'Sample1\tqueryReads1.fq,queryReads2.fq\tRun1'
++ lotus3 -derepMin 1:1,1:2,1:3 -i reads/ -m reads/miSeqMap.sm.txt -o reads-output/ -refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.fasta -tax4refDB /shared/users/grupo1/lemmi16s/benchmark/tmp/lotus303_16s_HM_Contaminated/tmp_HM_Contaminated_Soil/database/reference.tsv -t 4
+WARNING:: Requested DB for uchime ref at
+DB//rdp_gold.fa
+does not exist; LotuS will run without reference based OTU chimera checking.
+ 
+tput: No value for $TERM and no -T specified
+WARNING:: No forward PCR primer for amplicon found in mapping file (column header "ForwardPrimer". This might invalidate chimera checks).
+ 
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+WARNING:: Could not check for contaminated OTUs, because "phiX.0" reference database "DB//phiX.fasta"did not exist.
+ 
+cat: reads-output//tmpFiles//lulu_match_list.txt.rm: No such file or directory
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
++ biom convert -i reads-output/OTU.biom -o results.txt --to-tsv --header-key taxonomy
++ editResult.py results.txt results.tsv summary_taxonomy.tsv
+/shared/users/grupo1/lemmi16s/resources/candidate_containers/lotus_303_lemmi16s/scripts/editResult.py:15: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  taxonomy["taxonomy"]=taxonomy["taxonomy"].str.replace('?','')
++ cp results.tsv /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.predictions.tsv
+[Tue Sep  8 15:18:22 2026]
+Finished job 1.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Tue Sep  8 15:18:22 2026]
+localrule target:
+    input: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil.runtime_training.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil.memory_training.txt
+    jobid: 0
+    reason: Input files updated by another job: /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.predictions.tsv, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.memory_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c002.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-e001.runtime_analysis.txt, /shared/users/grupo1/lemmi16s/benchmark/analysis_outputs/lotus_303_lemmi16s.HM_Contaminated_Soil-c001.memory_analysis.txt
+    resources: tmpdir=/tmp
+
+[Tue Sep  8 15:18:22 2026]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: ../../../.snakemake/log/2026-09-08T150751.915760.snakemake.log
+/shared/users/grupo1/lemmi16s_env/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.21) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+Building DAG of jobs...
+MissingInputException in rule predictions_by_ranks in file /shared/users/grupo1/lemmi16s/workflow/rules/eval.smk, line 299:
+Missing input files for rule predictions_by_ranks:
+    output: /shared/users/grupo1/lemmi16s/benchmark/evaluations/predictions.lotus_303_lemmi16s.HM_Contaminated_Soil-c001.family.tsv
+    wildcards: toolname=lotus_303_lemmi16s, instance_name_nosuffix=HM_Contaminated_Soil, all_sample=c001, rank=family
+    affected files:
+        /shared/users/grupo1/lemmi16s/benchmark/repository/SILVA/GCN_ref.tsv

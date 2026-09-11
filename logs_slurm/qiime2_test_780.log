@@ -1,0 +1,18 @@
+==========================================================
+=== INICIO DE TRABAJO SLURM: 780 ===
+==========================================================
+Nodo asignado:   rbp5-1
+CPUs asignados:  4
+Fecha y hora:    Wed Sep  9 10:54:23 -05 2026
+Directorio base: /shared/users/grupo1/lemmi16s
+==========================================================
+[TELEMETRIA] Iniciando medicion de energia RPi5...
+[TELEMETRIA] Proceso de medicion corriendo con PID 71337
+[PIPELINE] Iniciando ejecucion de QIIME 2 para alfa_v1v2_SILVA-c001...
+=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 4 NUCLEOS ===
+[PASO 1/5] Importando secuencias demux...
+Imported manifest.tsv as PairedEndFastqManifestPhred33 to demux.qza
+[PASO 2/5] Filtrado de calidad por q-score...
+Saved SampleData[SequencesWithQuality] to: demux-filtered.qza
+Saved QualityFilterStats to: demux-filter-stats.qza
+[PASO 3/5] Denoising y filtrado con Deblur (usando 4 hilos)...

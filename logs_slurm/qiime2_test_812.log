@@ -1,0 +1,43 @@
+==========================================================
+=== INICIO DE TRABAJO SLURM: 812 ===
+==========================================================
+Nodo asignado:   rbp5-1
+CPUs asignados:  4
+Fecha y hora:    Wed Sep  9 14:22:07 -05 2026
+Directorio base: /shared/users/grupo1/lemmi16s
+==========================================================
+[TELEMETRIA] Iniciando medicion de energia RPi5...
+[TELEMETRIA] Proceso de medicion corriendo con PID 72184
+[PIPELINE] Iniciando ejecucion de QIIME 2 para alfa_v1v2_SILVA-c001...
+=== INICIANDO LEMMI16S ANALYSIS QIIME2 CON 4 NUCLEOS ===
+[PASO 1/5] Importando secuencias demux...
+Imported manifest.tsv as PairedEndFastqManifestPhred33 to demux.qza
+[PASO 2/5] Filtrado de calidad por q-score...
+Saved SampleData[SequencesWithQuality] to: demux-filtered.qza
+Saved QualityFilterStats to: demux-filter-stats.qza
+[PASO 3/5] Denoising y filtrado con Deblur (usando 4 hilos)...
+Saved FeatureTable[Frequency] to: table-deblur.qza
+Saved FeatureData[Sequence] to: rep-seqs-deblur.qza
+Saved DeblurStats to: deblur-stats.qza
+[PASO 4/5] Clasificacion taxonomica Naive Bayes con classify-sklearn (usando 4 hilos)...
+Saved FeatureData[Taxonomy] to: taxonomy.qza
+[PASO 5/5] Colapso taxonomico y exportacion de resultados...
+Saved FeatureTable[Frequency] to: phyla-table.qza
+Exported phyla-table.qza as BIOMV210DirFmt to directory .
+=== ANALISIS QIIME2 COMPLETADO CON EXITO ===
+[TELEMETRIA] Finalizando medicion de energia (PID: 72184)...
+==========================================================
+=== RESUMEN DE FINALIZACION ===
+==========================================================
+Fecha y hora fin: Wed Sep  9 14:49:34 -05 2026
+Duracion total:   1647 segundos (27 min 27 s)
+Codigo de salida: 0
+[RESULTADO] Exito! Archivo de predicciones generado:
+-rw-rw-r-- 1 grupo1 grupo1 2.5K Sep  9 14:49 /shared/users/grupo1/lemmi16s/benchmark/tmp/test_qiime2/test_c001.predictions.tsv
+--- Primeras 5 lineas de predicciones ---
+#LEMMI16s
+Group_ID	Size	Taxonomy
+group_0	6471	d__Bacteria;p__Firmicutes;c__Bacilli;na__na;na__na;na__na;na__na
+group_1	6808	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Pasteurellaceae;g__Haemophilus;na__na
+group_2	3898	d__Bacteria;p__Firmicutes;c__Bacilli;o__Lactobacillales;f__Streptococcaceae;g__Streptococcus;na__na
+==========================================================
